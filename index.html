@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Fantasy Football 2026 Draft Board</title>
-
   <style>
     :root {
       --bg: #070b22;
@@ -15,10 +14,6 @@
       --text: #e8efff;
       --muted: #91a8ce;
       --accent: #35e6d4;
-      --green: #55db91;
-      --yellow: #ffd166;
-      --red: #ff6b78;
-      --pink: #ff70c4;
     }
 
     * {
@@ -29,7 +24,7 @@
       margin: 0;
       background: var(--bg);
       color: var(--text);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
     }
 
     header {
@@ -39,33 +34,33 @@
       background: #080d27ee;
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--line);
-      padding: 18px;
+      padding: 18px
     }
 
     .wrap {
       max-width: 1550px;
-      margin: auto;
+      margin: auto
     }
 
     h1 {
       margin: 0;
-      font-size: 25px;
+      font-size: 25px
     }
 
     h2 {
       margin: 0 0 12px;
-      font-size: 18px;
+      font-size: 18px
     }
 
     p {
-      color: var(--muted);
+      color: var(--muted)
     }
 
     .controls {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
       gap: 9px;
-      margin-top: 16px;
+      margin-top: 16px
     }
 
     input,
@@ -76,26 +71,26 @@
       color: var(--text);
       border-radius: 9px;
       padding: 10px 12px;
-      font: inherit;
+      font: inherit
     }
 
     button {
       cursor: pointer;
-      background: var(--panel2);
+      background: var(--panel2)
     }
 
     button:hover {
-      border-color: var(--accent);
+      border-color: var(--accent)
     }
 
     main {
-      padding: 18px;
+      padding: 18px
     }
 
     .layout {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 360px;
-      gap: 18px;
+      gap: 18px
     }
 
     .card {
@@ -103,25 +98,25 @@
       border: 1px solid var(--line);
       border-radius: 14px;
       padding: 15px;
-      margin-bottom: 16px;
+      margin-bottom: 16px
     }
 
     .stats {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-bottom: 16px;
+      margin-bottom: 16px
     }
 
     .stat {
       background: var(--panel2);
       border-radius: 9px;
-      padding: 10px 13px;
+      padding: 10px 13px
     }
 
     .stat b {
       color: var(--accent);
-      font-size: 18px;
+      font-size: 18px
     }
 
     .pick-box {
@@ -129,41 +124,41 @@
       border: 1px solid var(--accent);
       border-radius: 11px;
       padding: 13px;
-      margin-bottom: 14px;
+      margin-bottom: 14px
     }
 
     .pick-box strong {
-      color: var(--accent);
+      color: var(--accent)
     }
 
     .priority {
       display: flex;
       flex-wrap: wrap;
       gap: 7px;
-      margin-top: 9px;
+      margin-top: 9px
     }
 
     .priority span {
       padding: 5px 9px;
       border-radius: 20px;
       font-size: 12px;
-      background: #263761;
+      background: #263761
     }
 
     .priority .first {
       background: #1d624d;
       color: #c5ffe1;
-      font-weight: bold;
+      font-weight: bold
     }
 
     .table-wrap {
-      overflow: auto;
+      overflow: auto
     }
 
     table {
       width: 100%;
       min-width: 1350px;
-      border-collapse: collapse;
+      border-collapse: collapse
     }
 
     th,
@@ -171,7 +166,7 @@
       border-bottom: 1px solid var(--line);
       padding: 10px 8px;
       text-align: left;
-      vertical-align: top;
+      vertical-align: top
     }
 
     th {
@@ -179,30 +174,30 @@
       font-size: 11px;
       text-transform: uppercase;
       cursor: pointer;
-      white-space: nowrap;
+      white-space: nowrap
     }
 
     tr.mine {
-      background: #123d42;
+      background: #123d42
     }
 
     tr.drafted {
-      opacity: .38;
+      opacity: .38
     }
 
     .player {
-      font-weight: 700;
+      font-weight: 700
     }
 
     .sub {
       color: var(--muted);
       font-size: 12px;
-      margin-top: 3px;
+      margin-top: 3px
     }
 
     .pos {
       color: var(--accent);
-      font-weight: bold;
+      font-weight: bold
     }
 
     .badge {
@@ -212,44 +207,44 @@
       margin: 2px;
       font-size: 12px;
       white-space: nowrap;
-      background: #293761;
+      background: #293761
     }
 
     .green {
       background: #20583f;
-      color: #bdffdb;
+      color: #bdffdb
     }
 
     .yellow {
       background: #654d21;
-      color: #ffe3a0;
+      color: #ffe3a0
     }
 
     .red {
       background: #6a2d3d;
-      color: #ffd3d8;
+      color: #ffd3d8
     }
 
     .blue {
       background: #263d72;
-      color: #c8d9ff;
+      color: #c8d9ff
     }
 
     .pink {
       background: #68315a;
-      color: #ffd2f0;
+      color: #ffd2f0
     }
 
     .action {
       display: flex;
       flex-direction: column;
       gap: 5px;
-      min-width: 145px;
+      min-width: 145px
     }
 
     .action button {
       padding: 6px 8px;
-      font-size: 12px;
+      font-size: 12px
     }
 
     .need,
@@ -258,43 +253,42 @@
       justify-content: space-between;
       gap: 8px;
       border-bottom: 1px solid var(--line);
-      padding: 8px 0;
+      padding: 8px 0
     }
 
     .need strong {
-      color: var(--accent);
+      color: var(--accent)
     }
 
     .team-player small {
-      color: var(--muted);
+      color: var(--muted)
     }
 
     .import-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-bottom: 10px;
+      margin-bottom: 10px
     }
 
     .small {
       font-size: 12px;
-      color: var(--muted);
+      color: var(--muted)
     }
 
     @media(max-width:950px) {
       .layout {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr
       }
 
       .controls {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr
       }
     }
   </style>
 </head>
 
 <body>
-
   <header>
     <div class="wrap">
       <h1>🏈 Fantasy Football 2026 Draft Board</h1>
@@ -343,7 +337,6 @@
   </header>
 
   <main class="wrap">
-
     <div class="stats">
       <div class="stat">Angezeigt: <b id="shown">0</b></div>
       <div class="stat">Gedraftet: <b id="draftedCount">0</b></div>
@@ -352,9 +345,7 @@
     </div>
 
     <div class="layout">
-
       <section class="card">
-
         <div class="pick-box">
           <div id="pickTitle"></div>
           <div id="pickInfo"></div>
@@ -372,35 +363,33 @@
         </div>
 
         <p class="small">
-          Bei deinem Pick landet der Spieler mit „Für mich draften“ automatisch in deinem Team.
-          „Gegner draftet“ markiert den Spieler nur als vergeben.
+          „Für mich draften“ fügt den Spieler deinem Team hinzu.
+          „Gegner draftet“ markiert ihn nur als vergeben.
         </p>
 
         <div class="table-wrap">
           <table>
             <thead>
-              <tr>
-                <th onclick="sortBy('rank')">Rank</th>
-                <th onclick="sortBy('name')">Spieler</th>
-                <th>Pos</th>
-                <th>Team</th>
-                <th onclick="sortBy('adp')">ADP</th>
-                <th>Runde</th>
-                <th>Rundenhinweis</th>
-                <th>Rolle</th>
-                <th>Konkurrenz</th>
-                <th>Status</th>
-                <th>Aktion</th>
-              </tr>
+<tr>
+  <th>Aktion</th>
+  <th onclick="sortBy('rank')">Rank</th>
+  <th onclick="sortBy('name')">Spieler</th>
+  <th>Pos</th>
+  <th>Team</th>
+  <th onclick="sortBy('adp')">ADP</th>
+  <th>Runde</th>
+  <th>Rundenhinweis</th>
+  <th>Rolle</th>
+  <th>Konkurrenz</th>
+  <th>Status</th>
+</tr>
             </thead>
             <tbody id="rows"></tbody>
           </table>
         </div>
-
       </section>
 
       <aside>
-
         <section class="card">
           <h2>Mein Team</h2>
           <div id="team"></div>
@@ -425,18 +414,15 @@
           <p><b>Runde 10–14:</b> LB/DL, Handcuff, WR-Tiefe</p>
           <p><b>Runde 15+:</b> K, DB, Streaming und letzte Benchplätze</p>
         </section>
-
       </aside>
     </div>
   </main>
 
   <script>
     /*
-      Board-Daten aus den bisher gelieferten Sleeper-Screenshots.
-      Weitere Spieler können über CSV importiert werden.
-    
-      CSV-Spalten:
-      rank,name,team,pos,adp,bye,status
+      Spielerboard aus deinen Sleeper-Screenshots.
+      Format:
+      Rank|Name|Team|Position|ADP|Bye|Status
     */
 
     const boardText = `
@@ -595,34 +581,174 @@
 153|Tre Tucker|LV|WR|255.6|13|Healthy
 154|Tank Dell|HOU|WR|262.5|8|IR
 155|Cole Kmet|WAS|TE|264.8|7|Healthy
+156|Bub Means|NE|WR|156.5|11|Healthy
+157|Hunter Henry|NE|TE|157.0|11|Healthy
+158|Deebo Samuel|SF|WR|158.3|8|Healthy
+159|Kyler Murray|ARI|QB|159.0|14|Healthy
+160|Oronde Gadsden II|LAC|TE|160.4|7|Healthy
+161|Romeo Doubs|NE|WR|160.9|11|Healthy
+162|Rachaad White|WAS|RB|162.5|7|Questionable
+163|Zach Charbonnet|SEA|RB|163.6|11|Probable
+164|Woody Marks|HOU|RB|164.5|8|Healthy
+165|Jake Bates|DET|K|165.5|6|Healthy
+166|Trey Benson|ARI|RB|166.2|14|Healthy
+167|Harrison Butker|KC|K|167.0|5|Healthy
+168|Khalil Shakir|BUF|WR|167.6|7|Questionable
+169|Rashid Shaheed|SEA|WR|169.0|11|Healthy
+170|Brenton Strange|JAX|TE|170.5|7|Healthy
+171|Harrison Mevis|LAR|K|171.9|11|Healthy
+172|MarShawn Lloyd|GB|RB|174.8|11|Healthy
+173|Byron Young|LAR|LB|178.1|11|Healthy
+174|Danielle Hunter|HOU|DL|179.6|8|Healthy
+175|Micah Parsons|GB|LB|180.6|11|Probable
+176|Andrew Van Ginkel|MIN|LB|181.9|6|Healthy
+177|Jamien Sherwood|NYJ|LB|183.1|13|Healthy
+178|Cobie Durant|LAR|DB|184.1|11|Healthy
+179|Azeez Ojulari|NYG|DL|185.7|8|Healthy
+180|Budda Baker|ARI|DB|186.1|14|Healthy
+181|Tuli Tuipulotu|LAC|DL|187.7|7|Healthy
+182|Tavius Robinson|BAL|DL|188.6|13|Healthy
+183|Ernest Jones|SEA|LB|189.0|11|Healthy
+184|Jaire Alexander|BAL|DB|190.4|13|Questionable
+185|Sam Darnold|SEA|QB|191.0|11|Healthy
+186|Christian Kirk|HOU|WR|192.7|8|Healthy
+187|Quay Walker|LV|LB|193.8|13|Healthy
+188|Tykee Smith|TB|DB|194.4|10|Healthy
+189|Abdul Carter|NYG|LB|195.1|8|Rookie
+190|Kenny Sadiq|NYJ|TE|195.2|13|Questionable
+191|Chris Boswell|PIT|K|197.8|9|Healthy
+192|Jaleel McLaughlin|DEN|RB|198.9|10|Healthy
+193|Evan McPherson|CIN|K|199.6|6|Healthy
+194|Jalen Coker|CAR|WR|200.8|5|Healthy
+195|D'Andre Thieneman|CHI|DB|201.9|10|Rookie
+196|Spencer Rattler|NO|QB|202.5|8|Healthy
+197|T.J. Hockenson|MIN|TE|202.9|6|Healthy
+198|David Bell|CLE|WR|204.4|11|Rookie
+199|Tyjae Spears|TEN|RB|205.8|9|Healthy
+200|Brian Robinson Jr.|ATL|RB|206.5|11|Healthy
+201|Justin Tucker|BAL|K|207.8|13|Healthy
+202|Dalton Schultz|HOU|TE|208.8|8|Healthy
+203|Tyrone Tracy Jr.|NYG|RB|209.2|8|Questionable
+204|Alvin Kamara|NO|RB|209.7|8|Questionable
+205|Aaron Donald|LAR|DL|213.0|11|Healthy
+206|Charles Omenihu|KC|DL|216.1|5|Healthy
+207|Nehemiah Emmanwori|SEA|DB|216.7|11|Questionable
+208|Cedric Gray|TEN|LB|221.2|9|Healthy
+209|K.C. Black|SF|RB|222.4|8|Rookie
+210|Jeffery Simmons|TEN|DL|223.4|9|Healthy
+211|Cooper DeJean|PHI|DB|223.5|10|Questionable
+212|Josh Hines-Allen|JAX|DL|225.9|7|Healthy
+213|Blake Cashman|MIN|LB|226.7|6|Healthy
+214|Xavier Watts|ATL|DB|227.9|11|Healthy
+215|Nate Landman|LAR|LB|228.7|11|Healthy
+216|Malik Washington|MIA|WR|229.3|6|Healthy
+217|Dallas Turner|MIN|LB|230.6|6|Healthy
+218|Kyle Dugger|NE|DB|230.7|11|Healthy
+219|Derrick Lloyd|CAR|LB|232.6|5|Questionable
+220|Rasheen Bain|TB|DL|233.8|10|Questionable
+221|Fernando Mendoza|LV|QB|234.0|13|Rookie
+222|Jack Chinn|LV|DB|235.5|13|Healthy
+223|Chris Allen|KC|WR|236.8|5|Rookie
+224|Zaire Franklin|GB|LB|237.3|11|Healthy
+225|Devon Witherspoon|SEA|DB|237.4|11|Healthy
+226|Will Reichard|MIN|K|239.1|6|Healthy
+227|C.J. Stroud|HOU|QB|240.2|8|Healthy
+228|Talanoa Hufanga|DEN|DB|241.1|10|Healthy
+229|Jalen Carter|PHI|DL|242.5|10|Healthy
+230|Tre'von Moehrig|CAR|DB|243.0|5|Healthy
+231|D.J. Wonnum|CHI|LB|244.2|10|Healthy
+232|Marcus Williams|BAL|DB|244.3|13|Healthy
+233|Juwan Johnson|NO|TE|246.0|8|Healthy
+234|Daniel Jones|IND|QB|247.5|13|Healthy
+235|Laiatu Latu|IND|DL|248.1|13|Healthy
+236|Mike White|MIA|QB|249.7|6|Healthy
+237|Denzel Henley|LAC|LB|250.5|7|Healthy
+238|Jake Naylor|LV|WR|251.6|13|Healthy
+239|AJ Barner|SEA|TE|252.0|11|Healthy
+240|D.J. Bailey|NYJ|LB|253.4|13|Healthy
+241|Xavier McKinney|GB|DB|254.5|11|Healthy
+242|Tre Tucker|LV|WR|255.6|13|Healthy
+243|Alex Singleton|DEN|LB|256.8|10|Healthy
+244|Tank Bigsby|PHI|RB|257.5|10|Healthy
+245|Jessie Bates III|ATL|DB|258.5|11|Healthy
+246|Kimani Vidal|LAC|RB|258.6|7|Questionable
+247|Antoine Winfield Jr.|TB|DB|260.4|10|Healthy
+248|Eddy Pineiro|SF|K|261.2|8|Healthy
+249|Tank Dell|HOU|WR|262.5|8|IR
+250|Elijah Johnson|KC|RB|263.9|5|Rookie
+251|Cole Kmet|WAS|TE|264.8|7|Healthy
+252|Isiah Pacheco|DET|RB|265.0|6|IR
+253|Allen Lazard|NYJ|WR|265.5|13|Healthy
+254|Jerry Jeudy|CLE|WR|267.2|11|Healthy
+255|Chase Granderson|NO|DL|268.8|8|Healthy
+256|D'Onta Foreman|CLE|RB|269.5|11|Healthy
+257|Patrick Surtain II|DEN|DB|272.4|10|Healthy
+258|Tucker McCann|GB|K|275.5|11|Healthy
+259|Chad Ryland|NE|K|276.6|11|Healthy
+260|Tyler Bass|BUF|K|277.3|7|Healthy
+261|Kylan Granson|IND|TE|278.9|13|Healthy
+262|Cedrick Wilson Jr.|MIA|WR|279.3|6|Healthy
+263|Kaden Elliss|NO|LB|281.0|8|Healthy
+264|B.J. Hill|CIN|DL|282.0|6|Healthy
+265|Ka'imi Fairbairn|HOU|K|283.6|8|Healthy
+266|Mecole Hardman|NYG|WR|284.0|8|Healthy
+267|Montez Sweat|CHI|DL|285.3|10|Healthy
+268|Cooper Kupp|SEA|WR|286.4|11|Healthy
+269|Aaron Rodgers|PIT|QB|286.9|9|Healthy
+270|Kamari Lassiter|HOU|DB|288.5|8|Healthy
+271|D.J. Reader|CIN|DL|289.4|6|Healthy
+272|Alex Highsmith|PIT|LB|290.2|9|Healthy
+273|Chase Young|NO|DL|291.4|8|Healthy
+274|Ventrell Miller|JAX|LB|292.7|7|Healthy
+275|Cam Ward|TEN|QB|293.2|9|Healthy
+276|Wil Lutz|DEN|K|293.9|10|Healthy
+277|Pat Freiermuth|PIT|TE|295.5|9|Healthy
+278|Cole Bishop|BUF|DB|296.6|7|Healthy
+279|Leonard Williams|SEA|DL|297.2|11|Healthy
+280|Brian Branch|DET|DB|298.9|6|Probable
+281|Jorge Rodriguez|MIA|LB|299.1|6|Questionable
+282|Bashaud Breeland|BUF|LB|300.1|7|Healthy
+283|C.J. Allen|IND|LB|300.9|13|Rookie
+284|Jordan Battle|CIN|DB|302.4|6|Healthy
+285|Bryce Young|CAR|QB|303.1|5|Healthy
+286|Patrick Queen|PIT|LB|304.7|9|Healthy
+287|Robert Spillane|NE|LB|305.3|11|Healthy
+288|Nick Singleton|TEN|RB|306.8|9|Rookie
+289|Zay Branch|ATL|WR|307.7|11|Rookie
+290|YaYa Diaby|TB|DL|308.0|10|Healthy
+291|Chase McLaughlin|TB|K|309.8|10|Healthy
+292|Cedric Tillman|MIA|WR|310.7|6|Rookie
+293|Jalyx Hunt|PHI|LB|311.7|10|Rookie
+294|Greg Rousseau|BUF|DL|312.0|7|Healthy
+295|Tutu Atwell|LAR|WR|313.9|11|Questionable
+296|Braelon Allen|NYJ|RB|314.2|13|Healthy
+297|Quinnen Williams|DAL|DL|314.8|14|Healthy
+298|Jaire Alexander|SEA|DB|316.5|11|Healthy
+299|Tyrone Tracy Jr.|NYG|RB|317.1|8|Healthy
+300|Jack Campbell|DET|LB|318.3|6|Healthy
+301|Jalen McMillan|TB|WR|319.9|10|Questionable
+302|J.J. Phillips|CAR|LB|320.2|5|Questionable
+303|Azeez Al-Shaair|HOU|LB|321.3|8|Healthy
+304|Jalen Pitre|HOU|DB|321.6|8|Healthy
+305|A.J. Finley|LAC|DL|323.2|7|Rookie
 `;
 
     let players = boardText.trim().split("\n").map((line, i) => {
       const [rank, name, team, pos, adp, bye, status] = line.split("|");
-
       return {
-        id: i,
-        rank: Number(rank),
-        name,
-        team,
-        pos,
-        adp: Number(adp),
-        bye,
-        status,
-        drafted: false,
-        mine: false
+        id: i, rank: Number(rank), name, team, pos, adp: Number(adp), bye, status
       };
     });
 
-    /* RB-Rollen und Backfield-Konkurrenz */
-    const rb = {
+    /* Rollen für RBs */
+    const rbRoles = {
       "Jahmyr Gibbs": ["Clear Lead Back", "geringe Konkurrenz", "Elite Receiving- und TD-Upside"],
       "Bijan Robinson": ["Clear Lead Back", "Brian Robinson Jr.", "Elite Workhorse"],
       "Jonathan Taylor": ["Clear Lead Back", "Seth McGowan", "Workhorse"],
       "Christian McCaffrey": ["Clear Lead Back", "Jordan Mason", "Elite, aber Workload-Risiko"],
       "James Cook": ["Clear Lead Back", "Ray Davis", "Clear #1"],
       "Saquon Barkley": ["Clear Lead Back", "Tank Bigsby", "Kaum relevante Konkurrenz"],
-      "Derrick Henry": ["Clear Lead Back", "Justice Hill", "Wenig Receiving, aber klare Goal-Line-Rolle"],
+      "Derrick Henry": ["Clear Lead Back", "Justice Hill", "Wenig Receiving, klare Goal-Line-Rolle"],
       "Chase Brown": ["Clear Lead Back", "Samaje Perine", "Clear #1"],
       "De'Von Achane": ["Clear Lead Back", "Jaylen Wright", "Receiving macht ihn wertvoll"],
       "Kenneth Walker III": ["Clear Lead Back", "geringe Konkurrenz", "Nicht überbewerten"],
@@ -641,7 +767,7 @@
       "David Montgomery": ["Committee", "Woody Marks", "Nicht wie Workhorse bezahlen"],
       "Woody Marks": ["Committee", "David Montgomery", "Echter Timeshare"],
       "D'Andre Swift": ["Committee", "Kyle Monangai", "Kurzfristig interessanter"],
-      "TreVeyon Henderson": ["Committee", "Rhamondre Stevenson", "Upside, keine sichere 3-Down-Rolle"],
+      "TreVeyon Henderson": ["Committee", "Rhamondre Stevenson", "Keine sichere 3-Down-Rolle"],
       "Rhamondre Stevenson": ["Committee", "TreVeyon Henderson", "Draft-Discount"],
       "Travis Etienne": ["Committee", "Alvin Kamara", "Unsichere Touch-Verteilung"],
       "Alvin Kamara": ["Committee", "Travis Etienne", "Receiving-Floor"],
@@ -655,11 +781,15 @@
       "Zach Charbonnet": ["Handcuff", "Jadarian Price", "Handcuff mit Upside"],
       "Blake Corum": ["Handcuff", "Kyren Williams", "Nur bei mehr Volumen stark"],
       "Trey Benson": ["Handcuff", "James Conner", "Laufzeit-Upside"],
-      "MarShawn Lloyd": ["RB1 mit Competition", "Josh Jacobs", "Upside-Handcuff"]
+      "MarShawn Lloyd": ["RB1 mit Competition", "Josh Jacobs", "Upside-Handcuff"],
+      "Tyrone Tracy Jr.": ["Committee", "Cam Skattebo", "Passing-Down-Upside"],
+      "Tank Bigsby": ["Handcuff", "Saquon Barkley", "Geringes Standalone-Value"],
+      "Isiah Pacheco": ["Handcuff", "geringe Konkurrenz", "Status prüfen"],
+      "Braelon Allen": ["Handcuff", "Breece Hall", "Nur bei Ausfall stark"]
     };
 
-    /* Team-WR1/WR2 und Fantasy-Wert */
-    const wr = {
+    /* Rollen für WRs */
+    const wrRoles = {
       "Ja'Marr Chase": ["Team-WR1", "Tee Higgins", "Elite"],
       "Tee Higgins": ["WR2 mit Fantasy-Value", "Ja'Marr Chase", "Fantasy-WR1/2"],
       "Puka Nacua": ["Team-WR1", "Davante Adams", "Elite Target-Leader"],
@@ -701,15 +831,14 @@
       "Michael Wilson": ["Team-WR2", "Marvin Harrison Jr.", "Geringerer Floor"],
       "Marvin Harrison Jr.": ["Team-WR1", "Michael Wilson", "Talent-/Target-Upside"],
       "Deebo Samuel": ["WR2 mit Fantasy-Value", "Mike Evans", "Usage muss stimmen"],
-      "Mike Evans": ["Team-WR1", "Deebo Samuel", "Red-Zone-Value"]
+      "Mike Evans": ["Team-WR1", "Deebo Samuel", "Red-Zone-Value"],
+      "Jerry Jeudy": ["Team-WR1", "KC Concepcion", "Target-Leader"],
+      "Tank Dell": ["WR2 mit Fantasy-Value", "Nico Collins", "Verletzungsrisiko"]
     };
 
     let drafted = JSON.parse(localStorage.getItem("ff-drafted") || "[]");
     let myTeam = JSON.parse(localStorage.getItem("ff-my-team") || "[]");
     let history = JSON.parse(localStorage.getItem("ff-history") || "[]");
-
-    let sortKey = "rank";
-    let sortDir = 1;
 
     function save() {
       localStorage.setItem("ff-drafted", JSON.stringify(drafted));
@@ -717,51 +846,31 @@
       localStorage.setItem("ff-history", JSON.stringify(history));
     }
 
-    function currentPick() {
-      return drafted.length + 1;
+    function esc(v) {
+      return String(v ?? "").replace(/[&<>"']/g, c => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+      }[c]));
     }
+
+    function currentPick() { return drafted.length + 1 }
+    function currentRound() { return Math.ceil(currentPick() / 12) }
 
     function ownerOfPick(pick) {
       const round = Math.ceil(pick / 12);
       const spot = ((pick - 1) % 12) + 1;
-
       return round % 2 === 1 ? spot : 13 - spot;
     }
 
-    function myPick() {
-      return ownerOfPick(currentPick()) === 4;
-    }
-
-    function currentRound() {
-      return Math.ceil(currentPick() / 12);
-    }
-
-    function roundText(round) {
-      return "R" + round;
-    }
-
     function roleFor(p) {
-      if (p.pos === "RB" && rb[p.name]) {
-        return {
-          label: rb[p.name][0],
-          competition: rb[p.name][1],
-          note: rb[p.name][2]
-        };
+      if (p.pos === "RB" && rbRoles[p.name]) {
+        const x = rbRoles[p.name];
+        return { label: x[0], competition: x[1], note: x[2] };
       }
-
-      if (p.pos === "WR" && wr[p.name]) {
-        return {
-          label: wr[p.name][0],
-          competition: wr[p.name][1],
-          note: wr[p.name][2]
-        };
+      if (p.pos === "WR" && wrRoles[p.name]) {
+        const x = wrRoles[p.name];
+        return { label: x[0], competition: x[1], note: x[2] };
       }
-
-      return {
-        label: "—",
-        competition: "—",
-        note: ""
-      };
+      return { label: "—", competition: "—", note: "" };
     }
 
     function roleClass(label) {
@@ -769,7 +878,6 @@
       if (label === "Committee") return "red";
       if (label === "RB1 mit Competition") return "yellow";
       if (label === "Handcuff") return "pink";
-      if (label.includes("WR2")) return "blue";
       return "blue";
     }
 
@@ -781,147 +889,120 @@
 
     function roundAdvice(p) {
       const round = currentRound();
-      let draftFrom = 10;
-      let stealFrom = 12;
-      let avoidBefore = 1;
+      let draftFrom = 10, stealFrom = 12, avoidBefore = 1;
 
-      if (p.pos === "RB" || p.pos === "WR") {
-        if (p.rank <= 12) {
-          draftFrom = 1;
-          stealFrom = 2;
-          avoidBefore = 1;
-        } else if (p.rank <= 40) {
-          draftFrom = 2;
-          stealFrom = 3;
-          avoidBefore = 1;
-        } else if (p.rank <= 80) {
-          draftFrom = 4;
-          stealFrom = 5;
-          avoidBefore = 3;
-        } else if (p.rank <= 130) {
-          draftFrom = 6;
-          stealFrom = 8;
-          avoidBefore = 5;
-        } else {
-          draftFrom = 10;
-          stealFrom = 12;
-          avoidBefore = 8;
-        }
+      if (["RB", "WR"].includes(p.pos)) {
+        if (p.rank <= 12) { draftFrom = 1; stealFrom = 2; avoidBefore = 1 }
+        else if (p.rank <= 40) { draftFrom = 2; stealFrom = 3; avoidBefore = 1 }
+        else if (p.rank <= 80) { draftFrom = 4; stealFrom = 5; avoidBefore = 3 }
+        else if (p.rank <= 130) { draftFrom = 6; stealFrom = 8; avoidBefore = 5 }
+        else { draftFrom = 10; stealFrom = 12; avoidBefore = 8 }
       }
 
-      if (p.pos === "QB") {
-        draftFrom = 6;
-        stealFrom = 8;
-        avoidBefore = 4;
-      }
-
+      if (p.pos === "QB") { draftFrom = 6; stealFrom = 8; avoidBefore = 4 }
       if (p.pos === "TE") {
         draftFrom = p.rank <= 35 ? 2 : 6;
         stealFrom = p.rank <= 35 ? 3 : 9;
         avoidBefore = p.rank <= 35 ? 2 : 5;
       }
-
       if (["DL", "LB", "DB"].includes(p.pos)) {
         draftFrom = p.pos === "LB" ? 8 : 9;
         stealFrom = p.pos === "LB" ? 10 : 11;
         avoidBefore = p.pos === "LB" ? 7 : 8;
       }
+      if (p.pos === "K") { draftFrom = 15; stealFrom = 16; avoidBefore = 14 }
 
-      if (p.pos === "K") {
-        draftFrom = 15;
-        stealFrom = 16;
-        avoidBefore = 14;
-      }
-
-      const role = roleFor(p);
-
-      if (role.label === "Committee") draftFrom += 1;
-      if (role.label === "Clear Lead Back") draftFrom -= 1;
-      if (role.label === "Team-WR1") draftFrom -= 1;
-      if (role.label === "WR2 mit Fantasy-Value") draftFrom -= 1;
-
-      if (p.status === "Questionable") draftFrom += 1;
+      const r = roleFor(p);
+      if (r.label === "Committee") draftFrom++;
+      if (r.label === "Clear Lead Back") draftFrom--;
+      if (r.label === "Team-WR1") draftFrom--;
+      if (r.label === "WR2 mit Fantasy-Value") draftFrom--;
+      if (p.status === "Questionable") draftFrom++;
       if (p.status === "IR") draftFrom += 3;
 
-      if (round < avoidBefore) {
-        return { text: "🚫 Zu früh", className: "red" };
-      }
-
-      if (round >= stealFrom) {
-        return { text: "💎 Steal", className: "green" };
-      }
-
-      if (round >= draftFrom) {
-        return { text: "✅ Draftbar", className: "yellow" };
-      }
-
+      if (round < avoidBefore) return { text: "🚫 Zu früh", className: "red" };
+      if (round >= stealFrom) return { text: "💎 Steal", className: "green" };
+      if (round >= draftFrom) return { text: "✅ Draftbar", className: "yellow" };
       return { text: "⏳ Warten", className: "blue" };
     }
 
-    function priorities() {
-      const counts = {};
-
+    function positionCounts() {
+      const c = {};
       myTeam.forEach(id => {
         const p = players.find(x => x.id === id);
-        if (p) counts[p.pos] = (counts[p.pos] || 0) + 1;
+        if (p) c[p.pos] = (c[p.pos] || 0) + 1;
       });
+      return c;
+    }
 
+    function priorities() {
+      const c = positionCounts();
       const needs = [];
 
-      if ((counts.RB || 0) < 2) needs.push(["RB", 2 - (counts.RB || 0)]);
-      if ((counts.WR || 0) < 2) needs.push(["WR", 2 - (counts.WR || 0)]);
-      if ((counts.QB || 0) < 1) needs.push(["QB", 1]);
-      if ((counts.TE || 0) < 1) needs.push(["TE", 1]);
-      if ((counts.DL || 0) < 1) needs.push(["DL", 1]);
-      if ((counts.LB || 0) < 1) needs.push(["LB", 1]);
-      if ((counts.DB || 0) < 1) needs.push(["DB", 1]);
-      if ((counts.K || 0) < 1) needs.push(["K", 1]);
+      if ((c.RB || 0) < 2) needs.push(["RB", 2 - (c.RB || 0)]);
+      if ((c.WR || 0) < 2) needs.push(["WR", 2 - (c.WR || 0)]);
+      if ((c.QB || 0) < 1) needs.push(["QB", 1]);
+      if ((c.TE || 0) < 1) needs.push(["TE", 1]);
+      if ((c.DL || 0) < 1) needs.push(["DL", 1]);
+      if ((c.LB || 0) < 1) needs.push(["LB", 1]);
+      if ((c.DB || 0) < 1) needs.push(["DB", 1]);
+      if ((c.K || 0) < 1) needs.push(["K", 1]);
 
-      const round = currentRound();
-
+      const r = currentRound();
       const filtered = needs.filter(x => {
-        if (round <= 3) return ["RB", "WR", "TE"].includes(x[0]);
-        if (round <= 6) return ["RB", "WR", "TE", "QB"].includes(x[0]);
-        if (round <= 10) return ["RB", "WR", "QB", "TE", "LB", "DL"].includes(x[0]);
-        if (round <= 14) return ["RB", "WR", "LB", "DL", "DB"].includes(x[0]);
+        if (r <= 3) return ["RB", "WR", "TE"].includes(x[0]);
+        if (r <= 6) return ["RB", "WR", "TE", "QB"].includes(x[0]);
+        if (r <= 10) return ["RB", "WR", "QB", "TE", "LB", "DL"].includes(x[0]);
+        if (r <= 14) return ["RB", "WR", "LB", "DL", "DB"].includes(x[0]);
         return true;
       });
 
       return filtered.length ? filtered : needs;
     }
 
+    function scorePlayer(p) {
+      let value = p.rank;
+      const r = roleFor(p);
+
+      if (r.label === "Clear Lead Back") value -= 10;
+      if (r.label === "Team-WR1") value -= 7;
+      if (r.label === "WR2 mit Fantasy-Value") value -= 3;
+      if (r.label === "Committee") value += 12;
+      if (r.label === "Handcuff") value += 7;
+      if (p.status === "Questionable") value += 5;
+      if (p.status === "IR") value += 30;
+
+      const needs = priorities().map(x => x[0]);
+      if (needs.includes(p.pos)) value -= 5;
+
+      return value;
+    }
+
     function filteredPlayers() {
       const q = document.getElementById("search").value.toLowerCase();
       const pos = document.getElementById("position").value;
-      const roleFilter = document.getElementById("roleFilter").value;
-      const statusFilter = document.getElementById("statusFilter").value;
+      const rf = document.getElementById("roleFilter").value;
+      const sf = document.getElementById("statusFilter").value;
       const view = document.getElementById("view").value;
 
       let list = players.filter(p => {
         const r = roleFor(p);
-        const text = [
-          p.name, p.team, p.pos, p.status,
-          r.label, r.competition, r.note
-        ].join(" ").toLowerCase();
+        const text = [p.name, p.team, p.pos, p.status, r.label, r.competition, r.note]
+          .join(" ").toLowerCase();
 
         if (q && !text.includes(q)) return false;
         if (pos && p.pos !== pos) return false;
-
-        if (roleFilter === "lead" && r.label !== "Clear Lead Back") return false;
-        if (roleFilter === "competition" && r.label !== "RB1 mit Competition") return false;
-        if (roleFilter === "committee" && r.label !== "Committee") return false;
-        if (roleFilter === "handcuff" && r.label !== "Handcuff") return false;
-        if (roleFilter === "wr1" && r.label !== "Team-WR1") return false;
-        if (roleFilter === "wr2" && r.label !== "WR2 mit Fantasy-Value") return false;
-
-        if (statusFilter === "healthy" && p.status !== "Healthy") return false;
-
-        if (statusFilter === "questionable" &&
-          !["Questionable", "Probable"].includes(p.status)) return false;
-
-        if (statusFilter === "risk" &&
-          ["Healthy", "Probable"].includes(p.status)) return false;
-
+        if (rf === "lead" && r.label !== "Clear Lead Back") return false;
+        if (rf === "competition" && r.label !== "RB1 mit Competition") return false;
+        if (rf === "committee" && r.label !== "Committee") return false;
+        if (rf === "handcuff" && r.label !== "Handcuff") return false;
+        if (rf === "wr1" && r.label !== "Team-WR1") return false;
+        if (rf === "wr2" && r.label !== "WR2 mit Fantasy-Value") return false;
+        if (sf === "healthy" && p.status !== "Healthy") return false;
+        if (sf === "questionable" && !["Questionable", "Probable"].includes(p.status))
+          return false;
+        if (sf === "risk" && ["Healthy", "Probable"].includes(p.status))
+          return false;
         if (view === "available" && drafted.includes(p.id)) return false;
         if (view === "mine" && !myTeam.includes(p.id)) return false;
 
@@ -929,32 +1010,16 @@
       });
 
       list.sort((a, b) => {
-        if (view === "best") {
-          const score = p => {
-            let value = p.rank;
-            const r = roleFor(p);
-
-            if (r.label === "Clear Lead Back") value -= 10;
-            if (r.label === "Team-WR1") value -= 7;
-            if (r.label === "WR2 mit Fantasy-Value") value -= 3;
-            if (r.label === "Committee") value += 12;
-            if (r.label === "Handcuff") value += 7;
-            if (p.status === "Questionable") value += 5;
-            if (p.status === "IR") value += 30;
-
-            return value;
-          };
-
-          return score(a) - score(b);
-        }
-
-        if (a[sortKey] > b[sortKey]) return sortDir;
-        if (a[sortKey] < b[sortKey]) return -sortDir;
-        return 0;
+        if (view === "best") return scorePlayer(a) - scorePlayer(b);
+        const av = a[sortKey], bv = b[sortKey];
+        return av > bv ? sortDir : av < bv ? -sortDir : 0;
       });
 
       return list;
     }
+
+    let sortKey = "rank";
+    let sortDir = 1;
 
     function render() {
       document.getElementById("shown").textContent = filteredPlayers().length;
@@ -974,165 +1039,115 @@
       const owner = ownerOfPick(pick);
       const mine = owner === 4;
 
-      document.getElementById("pickTitle").innerHTML =
-        mine
-          ? "<strong>🟢 DEIN PICK</strong>"
-          : "<strong>🔵 GEGNERISCHER PICK</strong>";
+      document.getElementById("pickTitle").innerHTML = mine
+        ? "<strong>🟢 DEIN PICK</strong>"
+        : "<strong>🔵 GEGNERISCHER PICK</strong>";
 
       document.getElementById("pickInfo").innerHTML =
-        `Overall Pick <strong>${pick}</strong> · ` +
-        `Runde <strong>${currentRound()}</strong> · ` +
-        `Team <strong>${owner}</strong>`;
+        `Overall Pick <strong>${pick}</strong> · Runde ` +
+        `<strong>${currentRound()}</strong> · Team <strong>${owner}</strong>`;
 
       const p = priorities();
 
       document.getElementById("priority").innerHTML =
         `<div class="sub">Dynamische Positionspriorität:</div>
      <div class="priority">
-       ${p.map((x, i) =>
-          `<span class="${i === 0 ? "first" : ""}">
-           ${i + 1}. ${x[0]} (${x[1]} offen)
-          </span>`
-        ).join("")}
+       ${p.map((x, i) => `<span class="${i === 0 ? "first" : ""}">
+       ${i + 1}. ${x[0]} (${x[1]} offen)</span>`).join("")}
      </div>`;
     }
 
     function renderRows() {
-      const rows = document.getElementById("rows");
-
-      rows.innerHTML = filteredPlayers().map(p => {
+      document.getElementById("rows").innerHTML = filteredPlayers().map(p => {
         const r = roleFor(p);
-        const advice = roundAdvice(p);
-        const isMine = myTeam.includes(p.id);
-        const isDrafted = drafted.includes(p.id);
+        const a = roundAdvice(p);
+        const mine = myTeam.includes(p.id);
+        const gone = drafted.includes(p.id);
 
         return `
-      <tr class="${isMine ? "mine" : ""} ${isDrafted ? "drafted" : ""}">
-        <td>${p.rank}</td>
-
-        <td>
-          <div class="player">${esc(p.name)}</div>
-          <div class="sub">Bye Week: ${esc(p.bye)}</div>
-        </td>
-
-        <td class="pos">${p.pos}</td>
-        <td>${esc(p.team)}</td>
-        <td>${p.adp}</td>
-        <td>${Math.ceil(p.rank / 12)}</td>
-
-        <td>
-          <span class="badge ${advice.className}">
-            ${advice.text}
-          </span>
-        </td>
-
-        <td>
-          <span class="badge ${roleClass(r.label)}">
-            ${esc(r.label)}
-          </span>
-          <div class="sub">${esc(r.note)}</div>
-        </td>
-
-        <td>${esc(r.competition)}</td>
-
-        <td>
-          <span class="badge ${statusClass(p.status)}">
-            ${esc(p.status)}
-          </span>
-        </td>
-
-        <td class="action">
-          ${isDrafted
+<tr class="${mine ? "mine " : ""}${gone ? "drafted" : ""}">
+  <td class="action">
+    ${gone
             ? `<button onclick="undraft(${p.id})">Freigeben</button>`
             : `
-              <button onclick="draftForMe(${p.id})">
-                Für mich draften
-              </button>
-              <button onclick="draftForOpponent(${p.id})">
-                Gegner draftet
-              </button>
-            `
+          <button onclick="draftForMe(${p.id})">
+            Für mich draften
+          </button>
+          <button onclick="draftForOpponent(${p.id})">
+            Gegner draftet
+          </button>
+        `
           }
-        </td>
-      </tr>
-    `;
+  </td>
+
+  <td>${p.rank}</td>
+      <td>
+        <div class="player">${esc(p.name)}</div>
+        <div class="sub">Bye Week: ${esc(p.bye)}</div>
+      </td>
+      <td class="pos">${p.pos}</td>
+      <td>${esc(p.team)}</td>
+      <td>${p.adp}</td>
+      <td>${Math.ceil(p.rank / 12)}</td>
+      <td><span class="badge ${a.className}">${a.text}</span></td>
+      <td>
+        <span class="badge ${roleClass(r.label)}">${esc(r.label)}</span>
+        <div class="sub">${esc(r.note)}</div>
+      </td>
+      <td>${esc(r.competition)}</td>
+      <td><span class="badge ${statusClass(p.status)}">${esc(p.status)}</span></td>
+      <td class="action">
+        ${gone
+            ? `<button onclick="undraft(${p.id})">Freigeben</button>`
+            : `<button onclick="draftForMe(${p.id})">Für mich draften</button>
+            <button onclick="draftForOpponent(${p.id})">Gegner draftet</button>`
+          }
+      </td>
+    </tr>`;
       }).join("");
     }
 
     function draftForMe(id) {
       if (drafted.includes(id)) return;
-
       drafted.push(id);
       myTeam.push(id);
-
-      history.push({
-        id,
-        mine: true,
-        pick: currentPick()
-      });
-
-      save();
-      render();
+      history.push({ id, mine: true, pick: currentPick() });
+      save(); render();
     }
 
     function draftForOpponent(id) {
       if (drafted.includes(id)) return;
-
       drafted.push(id);
-
-      history.push({
-        id,
-        mine: false,
-        pick: currentPick()
-      });
-
-      save();
-      render();
+      history.push({ id, mine: false, pick: currentPick() });
+      save(); render();
     }
 
     function undraft(id) {
       drafted = drafted.filter(x => x !== id);
       myTeam = myTeam.filter(x => x !== id);
       history = history.filter(x => x.id !== id);
-
-      save();
-      render();
+      save(); render();
     }
 
     function undoLast() {
       const last = history.pop();
-
       if (!last) return;
 
       drafted = drafted.filter(x => x !== last.id);
+      if (last.mine) myTeam = myTeam.filter(x => x !== last.id);
 
-      if (last.mine) {
-        myTeam = myTeam.filter(x => x !== last.id);
-      }
-
-      save();
-      render();
+      save(); render();
     }
 
     function resetDraft() {
       if (!confirm("Den kompletten Draft zurücksetzen?")) return;
-
-      drafted = [];
-      myTeam = [];
-      history = [];
-
-      save();
-      render();
+      drafted = []; myTeam = []; history = [];
+      save(); render();
     }
 
     function sortBy(key) {
-      if (sortKey === key) {
-        sortDir *= -1;
-      } else {
-        sortKey = key;
-        sortDir = 1;
-      }
-
+      if (sortKey === key) sortDir *= -1;
+      else { sortKey = key; sortDir = 1 }
       render();
     }
 
@@ -1149,111 +1164,52 @@
         const r = roleFor(p);
 
         return `
-      <div class="team-player">
-        <div>
-          <strong>${esc(p.name)}</strong>
-          <br>
-          <small>${p.pos} · ${p.team} · Board #${p.rank}</small>
-        </div>
-        <span class="badge ${roleClass(r.label)}">
-          ${esc(r.label)}
-        </span>
+    <div class="team-player">
+      <div>
+        <strong>${esc(p.name)}</strong><br>
+        <small>${p.pos} · ${p.team} · Board #${p.rank}</small>
       </div>
-    `;
+      <span class="badge ${roleClass(r.label)}">${esc(r.label)}</span>
+    </div>`;
       }).join("");
     }
 
     function renderNeeds() {
-      const limits = {
-        QB: 1,
-        RB: 2,
-        WR: 2,
-        TE: 1,
-        K: 1,
-        DL: 1,
-        LB: 1,
-        DB: 1
-      };
-
-      const counts = {};
-
-      myTeam.forEach(id => {
-        const p = players.find(x => x.id === id);
-        if (p) counts[p.pos] = (counts[p.pos] || 0) + 1;
-      });
-
+      const limits = { QB: 1, RB: 2, WR: 2, TE: 1, K: 1, DL: 1, LB: 1, DB: 1 };
+      const c = positionCounts();
       let html = "";
 
       Object.entries(limits).forEach(([pos, limit]) => {
-        const open = Math.max(0, limit - (counts[pos] || 0));
-
-        html += `
-      <div class="need">
-        <span>${pos}</span>
-        <strong>${open} offen</strong>
-      </div>
-    `;
+        html += `<div class="need"><span>${pos}</span>
+      <strong>${Math.max(0, limit - (c[pos] || 0))} offen</strong></div>`;
       });
 
-      const bench = Math.max(0, 8 - Math.max(0, myTeam.length - 11));
-
       html += `
-    <div class="need">
-      <span>WRT-Flex</span>
-      <strong>1 offen</strong>
-    </div>
-    <div class="need">
-      <span>Bench</span>
-      <strong>${bench} offen</strong>
-    </div>
-  `;
+    <div class="need"><span>WRT-Flex</span><strong>1 offen</strong></div>
+    <div class="need"><span>Bench</span>
+      <strong>${Math.max(0, 8 - Math.max(0, myTeam.length - 11))} offen</strong>
+    </div>`;
 
       document.getElementById("needs").innerHTML = html;
     }
 
     function renderBest() {
-      const box = document.getElementById("best");
+      const list = players.filter(p => !drafted.includes(p.id))
+        .sort((a, b) => scorePlayer(a) - scorePlayer(b)).slice(0, 6);
 
-      const list = players
-        .filter(p => !drafted.includes(p.id))
-        .sort((a, b) => {
-          const score = p => {
-            let value = p.rank;
-            const r = roleFor(p);
-
-            if (r.label === "Clear Lead Back") value -= 10;
-            if (r.label === "Team-WR1") value -= 7;
-            if (r.label === "WR2 mit Fantasy-Value") value -= 3;
-            if (r.label === "Committee") value += 12;
-            if (p.status === "Questionable") value += 5;
-
-            return value;
-          };
-
-          return score(a) - score(b);
-        })
-        .slice(0, 6);
-
-      box.innerHTML = list.map(p => {
+      document.getElementById("best").innerHTML = list.map(p => {
         const r = roleFor(p);
-        const advice = roundAdvice(p);
+        const a = roundAdvice(p);
 
         return `
-      <div class="team-player">
-        <div>
-          <strong>${esc(p.name)}</strong>
-          <br>
-          <small>#${p.rank} · ${p.pos} · ${p.team}</small>
-          <br>
-          <span class="badge ${advice.className}">
-            ${advice.text}
-          </span>
-        </div>
-        <span class="badge ${roleClass(r.label)}">
-          ${esc(r.label)}
-        </span>
+    <div class="team-player">
+      <div>
+        <strong>${esc(p.name)}</strong><br>
+        <small>#${p.rank} · ${p.pos} · ${p.team}</small><br>
+        <span class="badge ${a.className}">${a.text}</span>
       </div>
-    `;
+      <span class="badge ${roleClass(r.label)}">${esc(r.label)}</span>
+    </div>`;
       }).join("");
     }
 
@@ -1263,23 +1219,15 @@
         const r = roleFor(p);
 
         return {
-          name: p.name,
-          team: p.team,
-          position: p.pos,
-          boardRank: p.rank,
-          adp: p.adp,
+          name: p.name, team: p.team, position: p.pos,
+          boardRank: p.rank, adp: p.adp,
           roundAdvice: roundAdvice(p).text,
-          role: r.label,
-          competition: r.competition,
-          status: p.status
+          role: r.label, competition: r.competition, status: p.status
         };
       });
 
-      const blob = new Blob(
-        [JSON.stringify(data, null, 2)],
-        { type: "application/json" }
-      );
-
+      const blob = new Blob([JSON.stringify(data, null, 2)],
+        { type: "application/json" });
       const a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
       a.download = "mein-fantasy-football-team-2026.json";
@@ -1287,8 +1235,7 @@
     }
 
     function parseCSVLine(line) {
-      return line
-        .split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/)
+      return line.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/)
         .map(x => x.replace(/^"|"$/g, "").trim());
     }
 
@@ -1299,12 +1246,12 @@
       lines.forEach((line, index) => {
         const values = parseCSVLine(line);
         const row = {};
-
-        headers.forEach((header, i) => {
-          row[header] = values[i] || "";
-        });
-
+        headers.forEach((h, i) => row[h] = values[i] || "");
         if (!row.name) return;
+
+        const key = `${row.name}|${row.team}|${row.pos}`.toLowerCase();
+        if (players.some(p => `${p.name}|${p.team}|${p.pos}`.toLowerCase() === key))
+          return;
 
         players.push({
           id: 10000 + index,
@@ -1314,43 +1261,29 @@
           pos: (row.pos || "").toUpperCase(),
           adp: Number(row.adp) || 999,
           bye: row.bye || "",
-          status: row.status || "Healthy",
-          drafted: false,
-          mine: false
+          status: row.status || "Healthy"
         });
       });
 
+      players.sort((a, b) => a.rank - b.rank);
       render();
     }
 
-    function esc(value) {
-      return String(value ?? "").replace(/[&<>"']/g, c => ({
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;",
-        "'": "&#039;"
-      }[c]));
-    }
-
-    document.querySelectorAll("input,select").forEach(element => {
-      element.addEventListener("input", render);
+    document.querySelectorAll("input,select").forEach(el => {
+      el.addEventListener("input", render);
     });
 
-    document.getElementById("csvFile").addEventListener("change", event => {
-      const file = event.target.files[0];
-
+    document.getElementById("csvFile").addEventListener("change", e => {
+      const file = e.target.files[0];
       if (!file) return;
 
       const reader = new FileReader();
-
       reader.onload = () => importCSV(reader.result);
       reader.readAsText(file);
     });
 
     render();
   </script>
-
 </body>
 
 </html>
